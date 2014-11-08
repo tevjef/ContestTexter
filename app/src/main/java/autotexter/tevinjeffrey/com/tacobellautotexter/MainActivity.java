@@ -2,10 +2,14 @@ package autotexter.tevinjeffrey.com.tacobellautotexter;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
+import android.telephony.SmsManager;
+import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -29,7 +33,7 @@ public class MainActivity extends Activity {
         alarmIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
 
 
-        Toast.makeText(getApplicationContext(), "Sending text at 8:30am and every 12 hours after.", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Sending text at 8:30am every day", Toast.LENGTH_LONG).show();
 
         // Set the alarm to start at 8:30 a.m.
         Calendar calendar = Calendar.getInstance();
@@ -37,10 +41,6 @@ public class MainActivity extends Activity {
         calendar.set(Calendar.HOUR_OF_DAY, 8);
         calendar.set(Calendar.MINUTE, 30);
 
-        // setRepeating() lets you specify a precise custom interval--in this case,
-        // 20 minutes.
-        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                1000 * 60 * 60 * 12, alarmIntent);
 
         finish();
     }
