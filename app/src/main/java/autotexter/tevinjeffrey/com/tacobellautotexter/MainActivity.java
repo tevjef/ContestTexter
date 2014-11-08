@@ -26,7 +26,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         alarmMgr = (AlarmManager)getApplicationContext().getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
@@ -41,6 +40,10 @@ public class MainActivity extends Activity {
         calendar.set(Calendar.HOUR_OF_DAY, 8);
         calendar.set(Calendar.MINUTE, 30);
 
+        // With setInexactRepeating(), you have to use one of the AlarmManager interval
+        // constants--in this case, AlarmManager.INTERVAL_DAY.
+        alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                AlarmManager.INTERVAL_DAY, alarmIntent);
 
         finish();
     }
