@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="autotexter.tevinjeffrey.com.tacobellautotexter" >
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <receiver
+            android:name="autotexter.tevinjeffrey.com.tacobellautotexter.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" >
+        </receiver>
+
+        <activity
+            android:name="autotexter.tevinjeffrey.com.tacobellautotexter.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+    </application>
+
+</manifest>
