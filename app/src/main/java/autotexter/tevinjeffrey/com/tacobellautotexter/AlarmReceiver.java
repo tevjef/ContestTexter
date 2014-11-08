@@ -15,7 +15,6 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         // an Intent broadcast.
         sendText(context, "87654", "3A6NNMH399L");
-        throw new UnsupportedOperationException("Not yet implemented");
     }
 
     private void sendText(Context context, String number, String message) {

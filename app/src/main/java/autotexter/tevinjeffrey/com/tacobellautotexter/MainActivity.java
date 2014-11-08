@@ -41,6 +41,8 @@ public class MainActivity extends Activity {
         // 20 minutes.
         alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                 1000 * 60 * 60 * 12, alarmIntent);
+
+        finish();
     }
 
 
