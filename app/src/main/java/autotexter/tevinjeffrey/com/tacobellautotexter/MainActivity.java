@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
 
         Toast.makeText(getApplicationContext(), "Sending text at 8:30am and every 12 hours after.", Toast.LENGTH_LONG).show();
 
-// Set the alarm to start at 8:30 a.m.
+        // Set the alarm to start at 8:30 a.m.
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, 8);
