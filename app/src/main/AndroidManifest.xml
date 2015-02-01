@@ -23,7 +23,8 @@
         android:theme="@style/AppTheme" >
         <receiver
             android:name="autotexter.tevinjeffrey.com.tacobellautotexter.AlarmReceiver"
-            android:enabled="true">
+            android:enabled="true"
+            android:exported="true" >
         </receiver>
 
         <activity
